@@ -1,4 +1,4 @@
-function Tweet() {
+function Tweet(tweet) {
   return (
     <div className="tweet">
       <img
@@ -10,18 +10,17 @@ function Tweet() {
       <div className="body">
         <div className="top">
           <span className="user">
-            <span className="name">Ironhack</span>
-            <span className="handle">@ironhack</span>
+            <span className="name">{tweet.name}</span>
+            <span className="handle">@{tweet.handle}</span>
           </span>
 
-          <span className="timestamp">Nov 30, 2020</span>
+          <span className="timestamp">{tweet.timestamp}</span>
         </div>
 
         <p className="message">
-          On December 7th, we will be hosting a #webinar that will introduce you
-          to #SQL! Are you ready? 🚀
+         {tweet.message}
         </p>
-
+        
         <div className="actions">
           {/* Font Awesome icons */}
           <i className="far fa-comment" data-testid="comment-icon"></i>
@@ -30,7 +29,7 @@ function Tweet() {
           <i className="fas fa-share" data-testid="share-icon"></i>
         </div>
       </div>
-
+      
       <i className="fas fa-ellipsis-h"></i>
     </div>
   );
